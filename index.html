@@ -211,9 +211,9 @@
   /* ── Module Grid ── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    max-width: 840px; width: 100%;
+    max-width: 1100px; width: 100%;
   }
 
   /* ── Module Cards ── */
@@ -330,6 +330,10 @@
   }
 
   /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 700px) {
     .grid          { grid-template-columns: 1fr; }
     .suite-welcome { font-size: 26px; }
@@ -385,6 +389,7 @@
   <button class="signout-btn" onclick="handleLogout()">Sign Out</button>
 
   <h1 class="suite-welcome">ESM Presales Suite</h1>
+  <p class="suite-tagline">Designed for ESM Sales Leaders</p>
   <p class="suite-sub">Select a specialized module to begin your technical configuration</p>
 
   <div class="grid" role="list">
@@ -395,7 +400,7 @@
          onkeydown="if(event.key==='Enter'||event.key===' ')goToCapacity()">
       <span class="option-card__icon" aria-hidden="true">📈</span>
       <div>
-        <p class="option-card__title">Workforce Capacity Tool</p>
+        <p class="option-card__title">RFP Sizing Tool</p>
         <p class="option-card__label">Operational Sizing</p>
       </div>
     </div>
@@ -406,7 +411,7 @@
          onkeydown="if(event.key==='Enter'||event.key===' ')goToCalculator()">
       <span class="option-card__icon" aria-hidden="true">💰</span>
       <div>
-        <p class="option-card__title">Revenue &amp; CM Calculator</p>
+        <p class="option-card__title">Indicative Pricing &amp; SF Revenue Estimator</p>
         <p class="option-card__label">Commercial Modeling</p>
       </div>
     </div>
@@ -431,6 +436,30 @@
       <div>
         <p class="option-card__title">Presales Support Intake Form</p>
         <p class="option-card__label">Assistance Requests</p>
+      </div>
+    </div>
+
+    <div class="option-card" role="listitem" tabindex="0"
+         style="animation-delay: 0.33s"
+         onclick="goToAIPredictor()"
+         onkeydown="if(event.key==='Enter'||event.key===' ')goToAIPredictor()">
+      <span class="option-card__icon" aria-hidden="true">🤖</span>
+      <div>
+        <p class="option-card__title">AI Tool Predictor</p>
+        <p class="option-card__label">Smart Recommendations</p>
+        <p style="font-size:11px; margin-top:6px; opacity:0.8;">Intelligently recommends the right presales tools and strategies based on your deal context and requirements.</p>
+      </div>
+    </div>
+
+    <div class="option-card" role="listitem" tabindex="0"
+         data-wip
+         style="animation-delay: 0.40s"
+         onclick="wipAlert('This Module')"
+         onkeydown="if(event.key==='Enter'||event.key===' ')wipAlert('This Module')">
+      <span class="option-card__icon" aria-hidden="true">🚀</span>
+      <div>
+        <p class="option-card__title">Coming Soon</p>
+        <p class="option-card__label">New Module</p>
       </div>
     </div>
 
@@ -491,8 +520,16 @@
     window.location.href = "https://vijivincent-pixel.github.io/SF-Revenue-CM-Calc/";
   }
 
+  function goToAIPredictor() {
+    window.location.href = "https://vijivincent-pixel.github.io/Landing-Page/";
+  }
+
   function goToForm() {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSd9Lct_BI9ySjheNrnk8OYoTVXYO9XfPhZXo3ezMaNc3HEp1g/viewform", "_blank");
+  }
+
+  function goToAIPredictor() {
+    window.location.href = "https://vijivincent-pixel.github.io/AI-Platform-Predictor/";
   }
 
   function wipAlert(module) {
